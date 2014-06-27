@@ -4,7 +4,7 @@
 ##############################################################################
 {
     'name': u"Bank Reconciliation",
-    'version': u"1.0",
+    'version': u"1.0.1",
     'author': u"XCG Consulting",
     'category': u"Custom Module",
     'description': u"""Bank Reconciliation.
