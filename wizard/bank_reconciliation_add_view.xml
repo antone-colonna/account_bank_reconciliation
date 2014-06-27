@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <record model="ir.ui.view" id="account_bank_reconciliation_add_form">
+            <field name="name">account.bank.reconciliation.add.form</field>
+            <field name="model">account.bank.reconciliation.add</field>
+            <field name="arch" type="xml">
+                <form string="Add Lines to Reconciliate" version="7.0">
+                    <group col="2">
+	                    <field name="reconciliation_id" placeholder='New Bank Reconciliation Session' required="0" options="{'create': false, 'create_edit': false}"
+	                       readonly="context.get('default_reconciliation_id', False)"
+	                       domain="[('account_id', '=', account_id), ('period_id', '=', period_id)]"
+	                    />
+	                    <field name="account_id" invisible="1" />
+                        <field name="account_displayed" readonly="1" />
+	                    <field name="period_id" readonly="context.get('default_reconciliation_id', False)" />
+	                    <field name="move_line_ids" nolabel="1" colspan="2"
+	                        domain="[('account_id', '=', account_id), ('move_state', '=', 'posted'), ('reconciliation_line_id', '=', False)]"
+	                        context="{
+	                            'tree_view_ref': 'account_bank_reconciliation.view_move_line_tree_reconcilation',
+	                            'search_view_ref': 'account_bank_reconciliation.view_move_line_search_reconcilation'
+	                    }" />
+                    </group>
+                    <footer>
+                        <button name="add" string="Validate" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_bank_reconciliation_add" model="ir.actions.act_window">
+            <field name="name">Add Lines to Reconciliate</field>
+            <field name="res_model">account.bank.reconciliation.add</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="account_bank_reconciliation_add_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <act_window name="Bank Reconciliation"
+            res_model="account.bank.reconciliation.add"
+            src_model="account.move.line"
+            key2="client_action_multi" 
+            view_mode="form" target="new" 
+            view_type="form"
+            id="account_bank_reconciliation_add_submenu" />
+
+    </data>
+</openerp>

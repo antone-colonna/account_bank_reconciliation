@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem id="menu_bank_move_line_reconcile"
+            name="Reconcile Journal Entries"
+            action="action_bank_move_line_reconcile"
+            sequence="20"
+            parent="account.menu_finance_bank_and_cash"
+        />
+        <menuitem id="menu_bank_reconciliation_statement"
+            name="Print Reconciliation Statement"
+            action="action_bank_reconciliation_statement"
+            sequence="30"
+            parent="account.menu_finance_bank_and_cash"
+        />
+        <menuitem id="menu_bank_reconciliation"
+            name="Reconciliation Sessions"
+            action="action_bank_reconciliation"
+            sequence="40"
+            parent="account.menu_finance_bank_and_cash"
+        />
+        <menuitem id="menu_bank_reconciliation_line"
+            name="Reconciliation Lines"
+            action="action_bank_reconciliation_line"
+            sequence="50"
+            parent="account.menu_finance_bank_and_cash"
+        />
+    </data>
+</openerp>

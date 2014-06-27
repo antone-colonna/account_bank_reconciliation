@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_bank_reconciliation_form" model="ir.ui.view">
+            <field name="name">account.bank.reconciliation.form</field>
+            <field name="model">account.bank.reconciliation</field>
+            <field name="arch" type="xml">
+                <form string="Bank Reconciliation Session">
+                    <group col="2">
+                        <group colspan="1" col="2">
+                            <field name="id" invisible="1"/>
+                            <field name="name" invisible="1"/>
+                            <field name="account_id" attrs="{'readonly': [('id', '!=', False)]}"/> <!-- domain="[('type', '=', 'liquidity')]" -->
+                            <field name="company_id" groups="base.group_multi_company" />
+                        </group>
+                        <group colspan="1" col="2">
+                            <field name="period_id" />
+                            <field name="total_amount" />
+                        </group>
+                        <group string="Reconciliation Lines" colspan="2" col="1">
+                            <button name="%(action_bank_reconciliation_add)d" string="Add Lines" type="action"
+                                context="{'default_reconciliation_id': id, 'default_account_id': account_id}"
+                            />
+                            <field name="line_ids" nolabel="1"
+                                context="{'default_account_id': account_id, 'tree_view_ref': 'account_bank_reconciliation.view_bank_reconciliation_line_session_tree'}"
+                            />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_bank_reconciliation_tree" model="ir.ui.view">
+            <field name="name">account.bank.reconciliation.tree</field>
+            <field name="model">account.bank.reconciliation</field>
+            <field name="arch" type="xml">
+                <tree string="Bank Reconciliation Sessions">
+                    <field name="name" />
+                    <field name="account_id" />
+                    <field name="period_id" />
+                    <field name="total_amount" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_bank_reconciliation_search" model="ir.ui.view">
+            <field name="name">account.bank.reconciliation.search</field>
+            <field name="model">account.bank.reconciliation</field>
+            <field name="arch" type="xml">
+                <search string="Reconciliation Search">
+                    <field name="account_id" />
+                    <field name="period_id" />
+                    <field name="total_amount" />
+                </search>
+            </field>
+        </record>
+
+        <record id="view_bank_reconciliation_line_session_tree" model="ir.ui.view">
+            <field name="name">account.bank.reconciliation.line.session.tree</field>
+            <field name="model">account.bank.reconciliation.line</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <tree string="Bank Reconciliation Lines" editable="bottom" create="false">
+                    <field name="account_id" invisible="1" />
+                    <field name="reconciliation_date" readonly="1" />
+                    <field name="period_id" readonly="1" />
+                    <field name="date" readonly="1" />
+                    <field name="move_line_id" readonly="1"
+                        domain="[('move_state', '=', 'posted'), ('reconciliation_line_id', '=', False), ('account_id', '=', account_id)]"
+                        context="{
+                            'tree_view_ref': 'account_bank_reconciliation.view_move_line_tree_reconcilation',
+                            'search_view_ref': 'account_bank_reconciliation.view_move_line_search_reconcilation'
+                    }" />
+                    <field name="journal_id" readonly="1" />
+                    <field name="debit_curr" readonly="1" />
+                    <field name="credit_curr" readonly="1" />
+                    <field name="currency_id" readonly="1" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_bank_reconciliation_line_tree" model="ir.ui.view">
+            <field name="name">account.bank.reconciliation.line.tree</field>
+            <field name="model">account.bank.reconciliation.line</field>
+            <field name="arch" type="xml">
+                <tree string="Bank Reconciliation Lines" create="false">
+                    <field name="name" />
+                    <field name="reconciliation_period_id" />
+                    <field name="reconciliation_date" />
+                    <field name="period_id" />
+                    <field name="date" />
+                    <field name="move_line_id" />
+                    <field name="account_id" />
+                    <field name="journal_id" />
+                    <field name="debit_curr" />
+                    <field name="credit_curr" />
+                    <field name="currency_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_bank_reconciliation_line_search" model="ir.ui.view">
+            <field name="name">account.bank.reconciliation.line.search</field>
+            <field name="model">account.bank.reconciliation.line</field>
+            <field name="arch" type="xml">
+                <search string="Reconciliation Line Search">
+                    <field name="account_id" />
+                    <field name="reconciliation_period_id" />
+                    <field name="debit_curr" />
+                    <field name="credit_curr" />
+                    <field name="currency_id" />
+                    <group expand="0" string="Group By...">
+                        <filter string="Account"  icon="terp-folder-green" context="{'group_by':'account_id'}"/>
+                        <filter string="Period" icon="terp-go-month" domain="[]" context="{'group_by':'period_id'}"/>
+                        <filter string="Reconciliation Period" icon="terp-go-month" domain="[]" context="{'group_by':'reconciliation_period_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_move_line_tree_reconcilation" model="ir.ui.view">
+            <field name="name">account.move.line.tree.reconciliation</field>
+            <field name="model">account.move.line</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <list string="Journal Items" version="7.0">
+                    <field name="account_id" invisible="1" />
+                    <field name="period_id" />
+                    <field name="date" />
+                    <field name="ref" />
+                    <field name="name" />
+                    <field name="journal_id" />
+                    <field name="partner_id" />
+                    <field name="debit_curr" />
+                    <field name="credit_curr" />
+                    <field name="currency_id" />
+                </list>
+            </field>
+        </record>
+
+        <record id="view_move_line_search_reconcilation" model="ir.ui.view">
+            <field name="name">account.move.line.search.reconciliation</field>
+            <field name="model">account.move.line</field>
+            <field name="priority">100</field>
+            <field name="arch" type="xml">
+                <search string="Move Line Search">
+                    <field name="name" filter_domain="['|', ('name', 'ilike', self), ('ref', 'ilike', self)]"/>
+                    <field name="period_id" />
+                    <field name="date" />
+                    <field name="journal_id" />
+                    <field name="debit_curr" />
+                    <field name="credit_curr" />
+                    <field name="currency_id" />
+                </search>
+            </field>
+        </record>
+
+        <record id="view_account_move_line_filter" model="ir.ui.view">
+            <field name="name">Journal Items</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/group[@string='Group By...']/filter[@string='Account']" position="attributes">
+                    <attribute name="name">groupby_account</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_bank_reconciliation" model="ir.actions.act_window">
+            <field name="name">Reconciliation Sessions</field>
+            <field name="res_model">account.bank.reconciliation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="action_bank_reconciliation_new" model="ir.actions.act_window">
+            <field name="name">Reconciliation Sessions</field>
+            <field name="res_model">account.bank.reconciliation</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="action_bank_reconciliation_line" model="ir.actions.act_window">
+            <field name="name">Reconciliation Lines</field>
+            <field name="res_model">account.bank.reconciliation.line</field>
+            <field name="view_mode">tree</field>
+            <field name="view_type">form</field>
+        </record>
+
+        <record id="action_bank_move_line_reconcile" model="ir.actions.act_window">
+            <field name="name">Reconcile Journal Entries</field>
+            <field name="res_model">account.move.line</field>
+            <field name="view_id" ref="account_bank_reconciliation.view_move_line_tree_reconcilation"/>
+            <field name="search_view_id" ref="account.view_account_move_line_filter" />
+            <field name="domain">[('move_state', '=', 'posted'), ('reconciliation_line_id', '=', False), ('account_id.type', '=', 'liquidity')]</field>
+            <field name="context">{'search_default_groupby_account': 1, 'advanced_filter':True, 'model_id':'account_move_line', 'filter_wizard_action':'action_view_advanced_filter_payment_selection'}</field>
+            <field name="view_mode">list</field>
+        </record>
+
+    </data>
+</openerp>

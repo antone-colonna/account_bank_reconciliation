@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="bank_reconciliation_sequence_line_type" model="ir.sequence.type">
+            <field name="name">Bank Reconciliation Line Code</field>
+            <field name="code">account.bank.reconciliation.line</field>
+        </record>
+
+        <record id="bank_reconciliation_sequence_line" model="ir.sequence">
+            <field name="name">Bank Reconciliation Line Code</field>
+            <field name="code">account.bank.reconciliation.line</field>
+            <field name="prefix">BRL</field>
+            <field name="padding">5</field>
+        </record>
+    </data>
+</openerp>

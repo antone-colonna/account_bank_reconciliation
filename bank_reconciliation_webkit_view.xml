@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+
+    <data>
+        <record id="bank_reconciliation_header" model="ir.header_webkit">
+        <field name="name">Bank Reconciliation Header</field>
+        <field name="orientation">Portrait</field>
+        <field name="format">A4</field>
+        <field eval="5.0" name="margin_left" />
+        <field eval="5.0" name="margin_right" />
+        <field eval="50.0" name="margin_top" />
+        <field eval="25.0" name="margin_bottom" />
+        <field name="css"><![CDATA[
+
+body {
+    font-family: helvetica;
+    font-size: 12px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* header */
+
+.header {
+    height: 120px;
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+    margin-top: -50px;
+    margin-bottom: 20px;
+    font-size:12px;
+}
+
+.logo{
+    padding: 0px 20px;
+    height: 10px;
+    padding-top:40px;
+}
+
+.header .logo img {
+    padding: 30px 30px;
+    height: 100px;
+    padding-top:0px;
+}
+
+.totals th {
+    font-size:12px;
+    
+}
+
+.header_text {
+	float: right;
+}
+
+.header_text .title {
+    font-size:16px;
+}
+
+.header_text .subtitle {
+    font-size:10px;
+}
+
+.pagenum {
+    font-size: 8px;
+    padding-top: 132px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.page span.text {
+    padding: 10px;
+}
+
+/* table */
+
+.basic_table {
+    font-size: 12px;
+    width:100%;
+    
+    
+}
+.text{
+    font-sign:12px;
+}
+.basic_table th,
+.basic_table td {
+    border: 1px solid lightGrey;
+    text-align:center;
+}
+
+.list_table {
+    font-size:12px;
+    border: 1px solid lightGrey;
+    text-align: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.list_table caption {
+    font-size: 14px;
+    margin-bottom: 20px
+}
+
+.list_table td {
+    border-top: 1px solid lightGrey;
+    border: 1px solid lightGrey;
+    font-size: 12px;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom:3px;
+    text-align: left;
+    border-bottom: 1px solid lightGrey;
+}
+
+.list_table th {
+    border: 1px solid lightGrey;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 3px
+    padding-left: 3px
+    border-bottom: 1px solid lightGrey;
+}
+
+.list_table thead {
+    display: table-header-group;
+}
+
+.list_table td.amount,
+.list_table th.amount {
+    text-align: right;
+}
+
+.list_table tr.line {
+    margin-bottom: 10px;
+    text-align:center;
+}
+
+.list_table th.date {
+    text-align: center;
+}
+
+.list_table tfoot {
+    font-size: 12px;
+}
+.totaux td{
+    font-size:12px;
+    width:80%;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.list_table tfoot th {
+    padding-top: 10px;
+}
+
+.list_table tfoot td,
+.list_table tfoot th {
+    text-align: right;
+    
+}
+
+.list_table td.signature {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.list_table td.signature title,
+.list_table td.signature name {
+    font-size: 12px;
+}
+
+.list_table td.signature img {
+    margin-bottom: 14px;
+    margin-top: 14px;
+    width: 140px;
+}
+.categ {
+    background-color: #B0B0B0;
+    font-weight:bold;
+}
+tr.categ td, tr.categ th {
+    text-align: center;
+}
+.discount{
+text_align:center;
+}
+.signature{
+font-size:12px;
+}
+.note,
+.footer {
+    margin: 20px auto;
+    text-align: center;
+    }
+
+.note {
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.footer {
+    border-top: 1px solid grey;
+}
+.footertext {
+    font-size:10px;
+}
+.tkt {
+font-size:10px;
+}
+
+.comment {
+    font-size: 12px;
+    width:100%;
+    border: 1px solid lightGrey;
+}
+.descriptif {
+    font-size:12px;
+    font-weight: bold;   
+}
+.date {
+    font-size:12px;
+    font-weight: bold;
+    float:right;
+    width: 80%;
+    margin: 20px 0;
+}
+
+
+]]></field>
+        <field name="html"><![CDATA[
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+        <style type="text/css">
+            ${css}
+        </style>
+    </head>
+    <body style="border:0; margin: 0;" onload="subst()">
+    %for object in objects:
+        <div class="header">
+            <div class="logo">${helper.embed_image('png', (object.company_id or user.company_id).logo)|n}</div>
+            <div class="header_text">
+                <div class="title">${user.company_id.name}</div>
+                <div class="subtitle">${user.name}</div>
+                <div class="subtitle">${ _(u"Date: {today}".format(today=today)) }</div>
+            </div>
+        </div>
+    %endfor
+	</body>
+</html>
+]]>
+        </field>
+        
+        <field name="footer_html" />
+    </record>
+
+	    <report
+	      id="account_bank_reconciliation_session"
+	      auto="False"
+	      file="account_bank_reconciliation/report/bank_reconciliation_session.mako"
+	      model="account.bank.reconciliation"
+	      name="account.bank.reconciliation.session"
+	      string="Bank Reconciliation Session"
+          webkit_header="bank_reconciliation_header"
+	      report_type="webkit"
+	      usage="default"
+	    />
+        <report
+          id="account_bank_reconciliation_statement"
+          auto="False"
+          file="account_bank_reconciliation/report/bank_reconciliation_statement.mako"
+          model="account.bank.reconciliation.statement"
+          name="account.bank.reconciliation.statement"
+          string="Bank Reconciliation Statement"
+          webkit_header="bank_reconciliation_header"
+          report_type="webkit"
+          usage="default"
+        />
+    </data>
+</openerp>

@@ -1,0 +1,500 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# * account_bank_reconciliation
+# Jérémie Gavrel <jeremie.gavrel@xcg-consulting.fr>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-25 15:32+0000\n"
+"PO-Revision-Date: 2014-06-25 17:34+0200\n"
+"Last-Translator: Jérémie Gavrel <jeremie.gavrel@xcg-consulting.fr>\n"
+"Language-Team: XCG\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,unreconciled_line_ids:0
+msgid "Unreconciled Journal Entries"
+msgstr "Transactions non rapprochées"
+
+#. module: account_bank_reconciliation
+#: model:ir.model,name:account_bank_reconciliation.model_account_bank_reconciliation_line
+msgid "Bank Reconciliation Line"
+msgstr "Ligne de rapprochement bancaire"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,unreconciled_total_balance:0
+msgid "Unreconciled Balance"
+msgstr "Solde non rapproché"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,print_reconciled:0
+msgid "Print Reconciled Lines"
+msgstr "Inclure les transactions rapprochées"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,reconciled_total_credit:0
+msgid "Reconciled Credit"
+msgstr "Crédit rapproché"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.line:0
+#: field:account.bank.reconciliation.line,reconciliation_period_id:0
+msgid "Reconciliation Period"
+msgstr "Période de rapprochement"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,unreconciled_total_debit:0
+msgid "Unreconciled Debit"
+msgstr "Débit non rapproché"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.statement:0
+msgid "Control Totals"
+msgstr "Totaux de contrôle"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,reconciled_total_debit:0
+msgid "Reconciled Debit"
+msgstr "Débit rapproché"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,reconciled_total_balance:0
+msgid "Reconciled Balance"
+msgstr "Solde rapproché"
+
+#. module: account_bank_reconciliation
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:50
+msgid "Totals"
+msgstr "Totaux"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.line:0
+msgid "Group By..."
+msgstr "Regrouper par…"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation:0
+#: field:account.bank.reconciliation,line_ids:0
+#: model:ir.actions.act_window,name:account_bank_reconciliation.action_bank_reconciliation_line
+#: model:ir.ui.menu,name:account_bank_reconciliation.menu_bank_reconciliation_line
+msgid "Reconciliation Lines"
+msgstr "Lignes de rapprochement"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,both_total_debit:0
+msgid "Reconstituted Debit"
+msgstr "Débit reconstitué"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.statement:0
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_session.mako:17
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:17
+msgid "Debit"
+msgstr "Débit"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.statement:0
+msgid "Print"
+msgstr "Imprimer"
+
+#. module: account_bank_reconciliation
+#: model:ir.actions.act_window,name:account_bank_reconciliation.action_bank_move_line_reconcile
+#: model:ir.ui.menu,name:account_bank_reconciliation.menu_bank_move_line_reconcile
+msgid "Reconcile Journal Entries"
+msgstr "Rapprocher les transactions"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,both_total_credit:0
+msgid "Reconstituted Credit"
+msgstr "Crédit reconstitué"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.statement:0
+msgid "Preview"
+msgstr "Aperçu"
+
+#. module: account_bank_reconciliation
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:70
+msgid "Control Account Total:"
+msgstr "Total de contrôle du compte comptable :"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation,name:0
+#: field:account.bank.reconciliation.line,name:0
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_session.mako:15
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:15
+msgid "Name"
+msgstr "Nom"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,control_total_debit:0
+msgid "Control Debit"
+msgstr "Débit de contrôle"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.add:0
+#: view:account.bank.reconciliation.statement:0
+msgid "or"
+msgstr "ou"
+
+#. module: account_bank_reconciliation
+#: code:addons/account_bank_reconciliation/model/bank_reconciliation.py:9
+#, python-format
+msgid "A bank reconciliation session can only reconcile lines from a single account.\n"
+"Expected: {first_name}\n"
+"Received: {second_name}"
+msgstr ""
+"Une session de rapprochement bancaire doit réconcilier des transactions "
+"provenant d'un seul compte.\n"
+"Attendu: {first_name}\n"
+"Obtenu: {second_name}"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,print_unreconciled:0
+msgid "Print Unreconciled Lines"
+msgstr "Inclure les transactions non rapprochées"
+
+#. module: account_bank_reconciliation
+#: view:account.move.line:0
+msgid "Move Line Search"
+msgstr "Recherche de transactions"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.statement:0
+msgid "Summary"
+msgstr "Résumé"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation,company_id:0
+#: field:account.bank.reconciliation.line,company_id:0
+#: field:account.bank.reconciliation.statement,company_id:0
+msgid "Company"
+msgstr "Société"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.statement:0
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:36
+msgid "Reconciled Lines"
+msgstr "Lignes rapprochées"
+
+#. module: account_bank_reconciliation
+#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:73
+#, python-format
+msgid "Can only work on a liquidity account."
+msgstr "Le compte doit être un compte de liquidités."
+
+#. module: account_bank_reconciliation
+#: model:ir.ui.menu,name:account_bank_reconciliation.menu_bank_reconciliation_statement
+msgid "Print Reconciliation Statement"
+msgstr "Editer le rapprochement"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,prepared:0
+msgid "Prepared"
+msgstr "Prêt"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.statement:0
+msgid "Unreconciled Lines Totals"
+msgstr "Totaux des transactions non rapprochés"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.line,reconciliation_date:0
+msgid "Reconciliation Date"
+msgstr "Date de rapprochement"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,unreconciled_total_credit:0
+msgid "Unreconciled Credit"
+msgstr "Crédit non rapproché"
+
+#. module: account_bank_reconciliation
+#: model:ir.actions.act_window,name:account_bank_reconciliation.action_bank_reconciliation
+#: model:ir.actions.act_window,name:account_bank_reconciliation.action_bank_reconciliation_new
+#: model:ir.ui.menu,name:account_bank_reconciliation.menu_bank_reconciliation
+msgid "Reconciliation Sessions"
+msgstr "Sessions de rapprochement"
+
+#. module: account_bank_reconciliation
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_session.mako:13
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:13
+msgid "Date"
+msgstr "Date"
+
+#. module: account_bank_reconciliation
+#: model:ir.actions.act_window,name:account_bank_reconciliation.account_bank_reconciliation_add_submenu
+#: model:ir.model,name:account_bank_reconciliation.model_account_bank_reconciliation
+msgid "Bank Reconciliation"
+msgstr "Rapprochement bancaire"
+
+#. module: account_bank_reconciliation
+#: sql_constraint:account.bank.reconciliation.line:0
+msgid "A journal entry can only be matched by one bank reconciliation line."
+msgstr "Une même transaction ne peut être rapprochée qu'une seule fois."
+
+#. module: account_bank_reconciliation
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:58
+msgid "Reconciled Lines Total:"
+msgstr "Total des transactions rapprochées :"
+
+#. module: account_bank_reconciliation
+#: view:account.move.line:0
+msgid "groupby_account"
+msgstr "groupby_account"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,control_total_balance:0
+msgid "Control Balance"
+msgstr "Solde de contrôle"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation,account_id:0
+#: field:account.bank.reconciliation.add,account_displayed:0
+#: view:account.bank.reconciliation.line:0
+#: field:account.bank.reconciliation.statement,account_id:0
+msgid "Account"
+msgstr "Compte"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,control_total_credit:0
+msgid "Control Credit"
+msgstr "Crédit de contrôle"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,control_line_ids:0
+msgid "All Journal Entries (control)"
+msgstr "Toutes les transactions (contrôle)"
+
+#. module: account_bank_reconciliation
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_session.mako:35
+msgid "Total:"
+msgstr "Total :"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation:0
+msgid "Reconciliation Search"
+msgstr "Recherche de session de rapprochement"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.line,reconciliation_id:0
+msgid "Reconciliation Session"
+msgstr "Session de rapprochement"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.line:0
+msgid "Reconciliation Line Search"
+msgstr "Recherche de ligne de rapprochement"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.statement:0
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_session.mako:16
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:16
+msgid "Credit"
+msgstr "Crédit"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.statement:0
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:23
+msgid "Unreconciled Lines"
+msgstr "Lignes non rapprochées"
+
+#. module: account_bank_reconciliation
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:64
+msgid "Reconstituted Account Total:"
+msgstr "Total reconstitué du compte comptable :"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation:0
+msgid "Add Lines"
+msgstr "Ajouter des lignes"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.add:0
+msgid "New Bank Reconciliation Session"
+msgstr "Nouvelle session de rapprochement"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.statement:0
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_session.mako:18
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:18
+msgid "Balance"
+msgstr "Solde"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.add:0
+msgid "Validate"
+msgstr "Valider"
+
+#. module: account_bank_reconciliation
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_session.mako:8
+msgid "Bank reconciliation session on account {code} {name}, dated {date}"
+msgstr ""
+"Session de rapprochement bancaire sur le compte {code} {name} à la date du "
+"{date}"
+
+#. module: account_bank_reconciliation
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:8
+msgid "Bank reconciliation statement on account {code} {name}, dated {date}"
+msgstr ""
+"Edition du rapprochement bancaire du compte {code} {name} à la date du "
+"{date}"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.line:0
+msgid "Bank Reconciliation Lines"
+msgstr "Lignes de rapprochement bancaire"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,both_total_balance:0
+msgid "Reconstituted Balance"
+msgstr "Solde reconstitué"
+
+#. module: account_bank_reconciliation
+#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:79
+#, python-format
+msgid "Can only select posted lines."
+msgstr "Les transactions doivent être validées."
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.statement:0
+#: field:account.bank.reconciliation.statement,theoretical_balance:0
+msgid "Theoretical Balance"
+msgstr "Solde théorique"
+
+#. module: account_bank_reconciliation
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:52
+msgid "Unreconciled Lines Total:"
+msgstr "Total des transactions non rapprochées :"
+
+#. module: account_bank_reconciliation
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_session.mako:14
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:14
+msgid "Reference"
+msgstr "Référence"
+
+#. module: account_bank_reconciliation
+#: code:addons/account_bank_reconciliation/model/bank_reconciliation.py:23
+#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:72
+#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:78
+#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:83
+#, python-format
+msgid "Error!"
+msgstr "Erreur !"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.add:0
+#: model:ir.actions.act_window,name:account_bank_reconciliation.action_bank_reconciliation_add
+#: model:ir.model,name:account_bank_reconciliation.model_account_bank_reconciliation_add
+msgid "Add Lines to Reconciliate"
+msgstr "Transactions à rapprocher"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.line,move_line_id:0
+msgid "Journal Entry"
+msgstr "Transaction"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation:0
+#: model:ir.actions.report.xml,name:account_bank_reconciliation.account_bank_reconciliation_session
+msgid "Bank Reconciliation Session"
+msgstr "Session de rapprochement bancaire"
+
+#. module: account_bank_reconciliation
+#: model:ir.actions.report.xml,name:account_bank_reconciliation.account_bank_reconciliation_statement
+msgid "Bank Reconciliation Statement"
+msgstr "Edition du rapprochement bancaire"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation,period_id:0
+#: view:account.bank.reconciliation.line:0
+#: field:account.bank.reconciliation.statement,period_id:0
+msgid "Period"
+msgstr "Période"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.add,move_line_ids:0
+msgid "Journal Entries"
+msgstr "Transactions"
+
+#. module: account_bank_reconciliation
+#: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:76
+msgid "Theoretical Account Balance:"
+msgstr "Solde théorique du compte comptable :"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.statement:0
+msgid "Reconstituted Totals"
+msgstr "Totaux reconstitués"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.statement,reconciled_line_ids:0
+msgid "Reconciled Journal Entries"
+msgstr "Transactions rapprochées"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation.add,reconciliation_id:0
+msgid "Session"
+msgstr "Session"
+
+#. module: account_bank_reconciliation
+#: field:account.move.line,reconciliation_line_id:0
+msgid "Reconciliation Line"
+msgstr "Ligne de rapprochement"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.statement:0
+msgid "Reconciled Lines Totals"
+msgstr "Totaux des transactions rapprochées"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.add:0
+#: view:account.bank.reconciliation.statement:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: account_bank_reconciliation
+#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:84
+#, python-format
+msgid "Cannot select lines that have been reconciled."
+msgstr ""
+"Les transactions sélectionnées ne doivent pas déjà avoir été rapprochées."
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation.statement:0
+#: model:ir.actions.act_window,name:account_bank_reconciliation.action_bank_reconciliation_statement
+#: model:ir.model,name:account_bank_reconciliation.model_account_bank_reconciliation_statement
+msgid "Reconciliation Statement"
+msgstr "Edition du rapprochement"
+
+#. module: account_bank_reconciliation
+#: view:account.bank.reconciliation:0
+msgid "Bank Reconciliation Sessions"
+msgstr "Sessions de rapprochement bancaire"
+
+#. module: account_bank_reconciliation
+#: field:account.bank.reconciliation,total_amount:0
+msgid "Total Amount"
+msgstr "Solde total"
+
+#. module: account_bank_reconciliation
+#: view:account.move.line:0
+#: model:ir.model,name:account_bank_reconciliation.model_account_move_line
+msgid "Journal Items"
+msgstr "Transactions"
+
+#~ msgid "unknown"
+#~ msgstr "inconnu"
+
+#, python-format
+#~ msgid "Journal :"
+#~ msgstr "Journal :"
+
+#, python-format
+#~ msgid "Account :"
+#~ msgstr "Compte :"
