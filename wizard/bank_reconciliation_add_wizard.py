@@ -80,7 +80,7 @@ class bank_reconciliation_add_wizard(osv.TransientModel):
                         _(u"Error!"),
                         _(u"Can only select posted lines.")
                     )
-                if line['reconciliation_line_id'] != False:
+                if line['reconciliation_line_id'] is not False:
                     raise osv.except_osv(
                         _(u"Error!"),
                         _(u"Cannot select lines that have been reconciled.")
