@@ -1,7 +1,7 @@
 from openerp.osv import fields, osv
 from openerp.tools.translate import _
 from openerp.addons.account_bank_reconciliation.model.bank_reconciliation \
-        import AccountConflictError
+    import AccountConflictError
 
 
 class bank_reconciliation_add_wizard(osv.TransientModel):
