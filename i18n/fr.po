@@ -2,13 +2,14 @@
 # This file contains the translation of the following modules:
 # * account_bank_reconciliation
 # Jérémie Gavrel <jeremie.gavrel@xcg-consulting.fr>, 2014.
+# Alexandre BRUN, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-25 15:32+0000\n"
-"PO-Revision-Date: 2014-06-25 17:34+0200\n"
-"Last-Translator: Jérémie Gavrel <jeremie.gavrel@xcg-consulting.fr>\n"
+"POT-Creation-Date: 2014-10-09 13:06+0000\n"
+"PO-Revision-Date: 2014-10-09 15:10+0200\n"
+"Last-Translator: Alexandre BRUN <>\n"
 "Language-Team: XCG\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -171,6 +172,11 @@ msgid "Summary"
 msgstr "Résumé"
 
 #. module: account_bank_reconciliation
+#: model:ir.model,name:account_bank_reconciliation.model_account_bank_reconciliation_add
+msgid "Add Lines to Reconcile"
+msgstr "Ajouter des lignes à rapprocher"
+
+#. module: account_bank_reconciliation
 #: field:account.bank.reconciliation,company_id:0
 #: field:account.bank.reconciliation.line,company_id:0
 #: field:account.bank.reconciliation.statement,company_id:0
@@ -184,7 +190,7 @@ msgid "Reconciled Lines"
 msgstr "Lignes rapprochées"
 
 #. module: account_bank_reconciliation
-#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:73
+#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:75
 #, python-format
 msgid "Can only work on a liquidity account."
 msgstr "Le compte doit être un compte de liquidités."
@@ -356,7 +362,7 @@ msgid "Reconstituted Balance"
 msgstr "Solde reconstitué"
 
 #. module: account_bank_reconciliation
-#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:79
+#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:81
 #, python-format
 msgid "Can only select posted lines."
 msgstr "Les transactions doivent être validées."
@@ -380,9 +386,9 @@ msgstr "Référence"
 
 #. module: account_bank_reconciliation
 #: code:addons/account_bank_reconciliation/model/bank_reconciliation.py:23
-#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:72
-#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:78
-#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:83
+#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:74
+#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:80
+#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:85
 #, python-format
 msgid "Error!"
 msgstr "Erreur !"
@@ -390,7 +396,6 @@ msgstr "Erreur !"
 #. module: account_bank_reconciliation
 #: view:account.bank.reconciliation.add:0
 #: model:ir.actions.act_window,name:account_bank_reconciliation.action_bank_reconciliation_add
-#: model:ir.model,name:account_bank_reconciliation.model_account_bank_reconciliation_add
 msgid "Add Lines to Reconciliate"
 msgstr "Transactions à rapprocher"
 
@@ -459,7 +464,7 @@ msgid "Cancel"
 msgstr "Annuler"
 
 #. module: account_bank_reconciliation
-#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:84
+#: code:addons/account_bank_reconciliation/wizard/bank_reconciliation_add_wizard.py:86
 #, python-format
 msgid "Cannot select lines that have been reconciled."
 msgstr ""
