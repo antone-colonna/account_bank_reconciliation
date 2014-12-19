@@ -1,5 +1,4 @@
 from openerp.osv import fields, osv
-from openerp.tools.translate import _
 
 
 class bank_reconciliation_add_wizard(osv.TransientModel):
@@ -63,8 +62,8 @@ class bank_reconciliation_add_wizard(osv.TransientModel):
 
             unreconciled_domain = line_domain + [
                 '|',
-                    ('reconciliation_line_id', '=', False),
-                    (reconciliation_period_str, '>', end),
+                ('reconciliation_line_id', '=', False),
+                (reconciliation_period_str, '>', end),
             ]
             unreconciled_ids = line_osv.search(
                 cr, uid, unreconciled_domain, context=context
