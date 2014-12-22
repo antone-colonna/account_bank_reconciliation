@@ -3,20 +3,21 @@
 # * account_bank_reconciliation
 # Jérémie Gavrel <jeremie.gavrel@xcg-consulting.fr>, 2014.
 # Alexandre BRUN, 2014.
+# Vincent Lhote-Hatakeyama <vincent.lhote@xcg-consulting.fr>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-09 13:06+0000\n"
-"PO-Revision-Date: 2014-12-19 15:30+0100\n"
-"Last-Translator: Houzéfa Abbasbhay <houzefa.abba@xcg-consulting.fr>\n"
-"Language-Team: XCG\n"
+"PO-Revision-Date: 2014-12-22 11:43+0200\n"
+"Last-Translator: Vincent Lhote-Hatakeyama <vincent.lhote@xcg-consulting.fr>\n"
+"Language-Team: XCG Consulting\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Virtaal 0.7.1\n"
 
 #. module: account_bank_reconciliation
 #: field:account.bank.reconciliation.statement,unreconciled_line_ids:0
@@ -200,7 +201,7 @@ msgstr "Le compte doit être un compte de liquidités."
 #. module: account_bank_reconciliation
 #: model:ir.ui.menu,name:account_bank_reconciliation.menu_bank_reconciliation_statement
 msgid "Print Reconciliation Statement"
-msgstr "Editer le rapprochement"
+msgstr "Éditer le rapprochement"
 
 #. module: account_bank_reconciliation
 #: field:account.bank.reconciliation.statement,prepared:0
@@ -350,7 +351,7 @@ msgstr ""
 #: report:addons/account_bank_reconciliation/report/bank_reconciliation_statement.mako:8
 msgid "Bank reconciliation statement on account {code} {name}, dated {date}"
 msgstr ""
-"Edition du rapprochement bancaire du compte {code} {name} à la date du {date}"
+"Édition du rapprochement bancaire du compte {code} {name} à la date du {date}"
 
 #. module: account_bank_reconciliation
 #: view:account.bank.reconciliation.line:0
@@ -414,7 +415,7 @@ msgstr "Session de rapprochement bancaire"
 #. module: account_bank_reconciliation
 #: model:ir.actions.report.xml,name:account_bank_reconciliation.account_bank_reconciliation_statement
 msgid "Bank Reconciliation Statement"
-msgstr "Edition du rapprochement bancaire"
+msgstr "Édition du rapprochement bancaire"
 
 #. module: account_bank_reconciliation
 #: field:account.bank.reconciliation,period_id:0
@@ -476,7 +477,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:account_bank_reconciliation.action_bank_reconciliation_statement
 #: model:ir.model,name:account_bank_reconciliation.model_account_bank_reconciliation_statement
 msgid "Reconciliation Statement"
-msgstr "Edition du rapprochement"
+msgstr "Édition du rapprochement"
 
 #. module: account_bank_reconciliation
 #: view:account.bank.reconciliation:0
