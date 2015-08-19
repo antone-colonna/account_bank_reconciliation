@@ -22,7 +22,7 @@ class account_move_line(osv.Model):
             )
             res = dict.fromkeys(ids, False)
             for val in vals:
-                res[val[related_field][0]] = val['id'][0]
+                res[val[related_field][0]] = val['id']
             return res
 
     def _reconciliation_line_id_store(self, cr, uid, ids, context=None):
